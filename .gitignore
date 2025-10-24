@@ -1,16 +1,34 @@
-/.venv/
+# Virtual environments
+.venv/
 venv/
+env/
+
+# Python cache and bytecode
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.env
-.env
-*.egg-info/
-dist/
+*.py[cod]
+
+# Distribution / packaging
 build/
-pip-log.txt
-pip-delete-this-directory.txt
+dist/
+*.egg-info/
+
+# Pytest cache
 .pytest_cache/
-*.log
-/.vscode/
+
+# IDE/editor folders
+.vscode/
+.idea/
+
+# Node
+node_modules/
+
+# OS files
+.DS_Store
+
+# Environment files
+.env
+
+# Ignore nested virtualenvs
+backend/venv/
+backend/.venv/
+
