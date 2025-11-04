@@ -3,6 +3,7 @@ import Webcam from "react-webcam";
 import axios from "axios";
 import { Holistic } from "@mediapipe/holistic";
 import { drawConnectors, drawLandmarks } from "@mediapipe/drawing_utils";
+import { Camera } from "@mediapipe/camera_utils"; // <-- Important fix here
 
 const CAPTURE_FRAMES = 30;
 
@@ -82,7 +83,10 @@ function SignLanguageRecognizer() {
         ctx,
         results.faceLandmarks,
         Holistic.FACE_MESH_TESSELATION,
-        { color: "#C0C0C070", lineWidth: 1 }
+        {
+          color: "#C0C0C070",
+          lineWidth: 1,
+        }
       );
     }
     if (results.leftHandLandmarks) {
@@ -90,7 +94,10 @@ function SignLanguageRecognizer() {
         ctx,
         results.leftHandLandmarks,
         Holistic.HAND_CONNECTIONS,
-        { color: "#CC0000", lineWidth: 5 }
+        {
+          color: "#CC0000",
+          lineWidth: 5,
+        }
       );
       drawLandmarks(ctx, results.leftHandLandmarks, {
         color: "#00FF00",
@@ -102,7 +109,10 @@ function SignLanguageRecognizer() {
         ctx,
         results.rightHandLandmarks,
         Holistic.HAND_CONNECTIONS,
-        { color: "#00CC00", lineWidth: 5 }
+        {
+          color: "#00CC00",
+          lineWidth: 5,
+        }
       );
       drawLandmarks(ctx, results.rightHandLandmarks, {
         color: "#FF0000",
@@ -123,8 +133,10 @@ function SignLanguageRecognizer() {
 
   useEffect(() => {
     holistic.onResults(onResults);
+
     if (!webcamRef.current || !webcamRef.current.video) return;
-    const camera = new window.Camera(webcamRef.current.video, {
+
+    const camera = new Camera(webcamRef.current.video, {
       onFrame: async () =>
         await holistic.send({ image: webcamRef.current.video }),
       width: 640,
