@@ -1,3 +1,4 @@
+# libraries
 import cv2
 import numpy as np
 import os
@@ -6,7 +7,8 @@ import mediapipe as mp
 # Path for exported data, numpy arrays
 DATA_PATH = 'MP_Data'
 
-# Your sign language classes (customize as needed)
+# Your sign language classes
+
 actions = np.array([
     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 
     'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
