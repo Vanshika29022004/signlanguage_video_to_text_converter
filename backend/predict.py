@@ -10,7 +10,7 @@ CORS(app)
 actions = np.array([
     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 
     'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-    'hello', 'thankyou', 'loveyou', 'space'
+    'hello', 'thankyou', 'loveyou', ' '
 ])
 
 model = load_model('action.h5')

@@ -7,7 +7,7 @@ from tensorflow.keras.layers import LSTM, Dense
 import os
 
 DATA_PATH = 'MP_Data'
-actions = np.array(['A', 'B','C','D','E','F','G','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z', 'hello', 'thankyou', 'loveyou', 'space']) 
+actions = np.array(['A', 'B','C','D','E','F','G','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z', 'hello', 'thankyou', 'loveyou', ' ']) 
 sequence_length = 30
 
 sequences, labels = [], []
